@@ -1,0 +1,37 @@
+#                        PLUGIN CREATED WITH LOVE FROM ALENUMEROS
+#                       PLEASE DO NOT DISTRIBUTE IT WITHOUT CONSENT
+#                       uwu             I <3 U                  owo
+name: TNTTag
+version: ${project.version}
+main: ale444113.tnttag.TNTTag
+authors: [ ale444113 ]
+description: This is a simple plugin created for fun and to learn how to create a mini game plugin
+commands:
+  joinarena:
+    description: This command allows the user to join an arena
+    default: true
+  leavearena:
+    description: With this command you can leave an arena, if you are in one...
+    default: true
+
+  listarenas:
+    description: This command will show you all the arenas
+    default: false
+
+
+  createarena:
+    description: With this command you can create your wonderful arenas, you must have the tnttag.createarena permission
+    default: false
+  deletearena:
+    description: "With this command you can delete your arenas, why would you do that?"
+    default: false
+
+  setarenastart:
+    description: "This command sets the player location when he joins the arena"
+    default: op
+  setarenaend:
+    description: "This command sets the player location when he leaves the arena"
+    default: op
+
+  deleteplayerdata:
+    description: "You can delete the player's data with this command, be careful"

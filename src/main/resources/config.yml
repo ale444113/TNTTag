@@ -1,0 +1,13 @@
+#                        PLUGIN CREATED WITH LOVE FROM ALENUMEROS
+#                       PLEASE DO NOT DISTRIBUTE IT WITHOUT CONSENT
+#                       uwu             I <3 U                  owo
+
+#Permissions:
+#- tnttag.createarena
+#- tnttag.deletearena
+#- tnttag.listarenas
+
+#The tnt will explote every 30 seconds
+server-ip: 192.168.0.1
+change-every: 30
+mongoUri: ""
