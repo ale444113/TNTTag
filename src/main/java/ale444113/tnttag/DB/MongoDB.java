@@ -16,7 +16,6 @@ public class MongoDB {
     private final TNTTag plugin = TNTTag.getInstance();
     private static MongoDatabase database;
     private static MongoCollection playersData;
-    public static boolean usingMongoDB = false;
     private static final ConsoleCommandSender console =  Bukkit.getConsoleSender();
 
     public MongoDB() {
@@ -41,8 +40,9 @@ public class MongoDB {
             console.sendMessage(ChatColor.YELLOW + "Did you provide a valid mongouri?");
             console.sendMessage(ChatColor.GRAY + "Error: ");
             System.out.println(e);
+            mongoClient = new MongoClient();
+            database = mongoClient.getDatabase("MinecraftTNTTag");
         }
-        usingMongoDB = true;
     }
     public static Document createPlayerData(UUID playerUUID) {
         Document playerDocumentData = new Document("_id", playerUUID)

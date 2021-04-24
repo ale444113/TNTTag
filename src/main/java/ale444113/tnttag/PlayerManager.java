@@ -60,12 +60,10 @@ public class PlayerManager {
             GameManager.giveTNT(nextTNTPlayer,arenaName);
             n--;
         }
-        if(MongoDB.usingMongoDB) {
-            for (Player p : alivePlayers) {
-                Session playerSession = SessionStorage.getSession(p.getUniqueId());
-                playerSession.change("rounds", playerSession.getRounds() + 1);
-                playerSession.change("points", playerSession.getPoints() + 1);
-            }
+        for (Player p : alivePlayers) {
+            Session playerSession = SessionStorage.getSession(p.getUniqueId());
+            playerSession.change("rounds", playerSession.getRounds() + 1);
+            playerSession.change("points", playerSession.getPoints() + 1);
         }
     }
     public static String getPlayerArena(Player player){

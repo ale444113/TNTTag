@@ -85,11 +85,10 @@ public class ArenaTimer {
                         Bukkit.getScheduler().cancelTask(taskId);
                         Arena.sendArenaMessage(arenaName, plugin.name + ChatColor.AQUA + aliveData.getValue().getName() + " is the winner!!");
 
-                        if(MongoDB.usingMongoDB) {
-                            Session playerSession = SessionStorage.getSession(aliveData.getValue().getUniqueId());
-                            playerSession.change("points", playerSession.getPoints() + 5);
-                            playerSession.change("wins", playerSession.getWins() + 1);
-                        }
+                        Session playerSession = SessionStorage.getSession(aliveData.getValue().getUniqueId());
+                        playerSession.change("points", playerSession.getPoints() + 5);
+                        playerSession.change("wins", playerSession.getWins() + 1);
+
                         Location endLocation = Arena.arenaEndLocations.get(arenaName);
                         for (Player p : Arena.gameArenas.get(arenaName).keySet()) {
                             if(Arena.isValidArena(endLocation)){ p.teleport(endLocation); }
